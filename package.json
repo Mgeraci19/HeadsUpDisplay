@@ -1,0 +1,15 @@
+{
+  "name": "heads-up-display",
+  "version": "1.0.0",
+  "description": "A local homepage dashboard with weather and calendar",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["dashboard", "homepage", "weather", "calendar"],
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

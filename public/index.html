@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heads Up Display</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="dashboard">
+    <header class="header">
+      <h1>Good <span id="greeting-time">Morning</span></h1>
+      <p class="date" id="current-date"></p>
+    </header>
+
+    <main class="main-content">
+      <!-- Weather Section -->
+      <section class="widget weather-widget">
+        <h2>Weather <span id="location-name"></span></h2>
+
+        <div class="weather-current" id="weather-current">
+          <div class="weather-loading">Loading weather data...</div>
+        </div>
+
+        <div class="weather-details">
+          <div class="sun-times" id="sun-times">
+            <div class="sun-item">
+              <span class="sun-icon">🌅</span>
+              <span class="sun-label">Sunrise</span>
+              <span class="sun-value" id="sunrise">--:--</span>
+            </div>
+            <div class="sun-item">
+              <span class="sun-icon">🌇</span>
+              <span class="sun-label">Sunset</span>
+              <span class="sun-value" id="sunset">--:--</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="weather-hourly">
+          <h3>Today's Forecast</h3>
+          <div class="hourly-scroll" id="hourly-forecast">
+            <!-- Hourly forecast will be populated by JavaScript -->
+          </div>
+        </div>
+
+        <div class="rain-alert" id="rain-alert" style="display: none;">
+          <span class="rain-icon">🌧️</span>
+          <span id="rain-message">Rain expected today</span>
+        </div>
+      </section>
+
+      <!-- Calendar Section -->
+      <section class="widget calendar-widget">
+        <h2>Calendar</h2>
+        <div class="calendar-container" id="calendar-container">
+          <div class="calendar-placeholder" id="calendar-placeholder">
+            <p>Google Calendar not configured</p>
+            <p class="calendar-instructions">
+              Edit <code>config.js</code> to add your Google Calendar ID
+              and set <code>enabled: true</code>
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Last updated: <span id="last-updated">--</span></p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
