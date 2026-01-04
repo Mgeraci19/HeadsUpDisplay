@@ -41,7 +41,11 @@ The dashboard is optimized for a 1080p display with:
    npm install
    ```
 
-2. Configure your settings in `config.js`:
+2. Configure your settings:
+   ```bash
+   cp .env.example .env
+   ```
+   Then edit `.env` with your personal settings:
    - Set your location (latitude/longitude)
    - Add your Google Calendar ID
    - Set your Obsidian vault path
@@ -92,30 +96,28 @@ pm2 save
 
 ## Configuration
 
-Edit `config.js` to customize:
+Copy `.env.example` to `.env` and customize your settings:
 
-```javascript
-module.exports = {
-  port: 3000,
+```bash
+# Server Configuration
+PORT=3000
 
-  location: {
-    latitude: 38.9101,
-    longitude: -77.0669,
-    timezone: 'America/New_York',
-    name: 'Washington DC'
-  },
+# Location Settings (find your coordinates at https://www.latlong.net/)
+LOCATION_LATITUDE=40.7128
+LOCATION_LONGITUDE=-74.0060
+LOCATION_TIMEZONE=America/New_York
+LOCATION_NAME=New York
 
-  googleCalendar: {
-    calendarId: 'your-email@gmail.com',
-    enabled: true
-  },
+# Google Calendar
+GOOGLE_CALENDAR_ENABLED=true
+GOOGLE_CALENDAR_ID=your-email@gmail.com
 
-  obsidian: {
-    vaultPath: '/path/to/your/Obsidian Vault',
-    enabled: true
-  }
-};
+# Obsidian Integration
+OBSIDIAN_ENABLED=true
+OBSIDIAN_VAULT_PATH=/path/to/your/Obsidian Vault
 ```
+
+**Note:** The `.env` file contains your personal settings and is not committed to git.
 
 ### Finding Your Coordinates
 
@@ -149,7 +151,9 @@ This is compatible with the [Obsidian Tasks](https://github.com/obsidian-tasks-g
 
 ```
 HeadsUpDisplay/
-├── config.js           # User configuration
+├── .env.example        # Template for environment variables
+├── .env                # Your personal settings (not committed)
+├── config.js           # Loads settings from .env
 ├── server.js           # Express server with API endpoints
 ├── package.json        # Dependencies
 ├── public/
