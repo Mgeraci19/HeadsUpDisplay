@@ -32,7 +32,7 @@ module.exports = {
   // Obsidian Tasks settings
   obsidian: {
     // Path to your Obsidian vault
-    vaultPath: '/Users/michaelgeraci/Documents/Obsidian Vault',
+    vaultPath: 'C:/Users/Michael Geraci/Documents/ObsidianNotes/Obsidian',
     // Set to true to enable tasks widget
     enabled: true
   }
