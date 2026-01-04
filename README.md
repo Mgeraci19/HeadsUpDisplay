@@ -53,6 +53,43 @@ The dashboard is optimized for a 1080p display with:
 
 4. Open http://localhost:3000 in your browser
 
+## Running Long-Term (PM2)
+
+For running the server persistently in the background, use PM2:
+
+### Installation
+
+```bash
+npm install -g pm2
+```
+
+### Start the Server
+
+```bash
+pm2 start server.js --name "HeadsUpDisplay"
+```
+
+### Auto-Start on Windows Boot
+
+```bash
+npm install -g pm2-windows-startup
+pm2-startup install
+pm2 save
+```
+
+### PM2 Commands Reference
+
+| Command | Description |
+|---------|-------------|
+| `pm2 status` | Check running processes |
+| `pm2 logs HeadsUpDisplay` | View server logs |
+| `pm2 stop HeadsUpDisplay` | Stop the server |
+| `pm2 restart HeadsUpDisplay` | Restart the server |
+| `pm2 delete HeadsUpDisplay` | Remove from PM2 |
+| `pm2 kill` | Shutdown PM2 daemon entirely |
+
+**Note:** Closing the terminal window does NOT stop PM2 - the server continues running in the background. Use `pm2 stop` or `pm2 kill` to stop it.
+
 ## Configuration
 
 Edit `config.js` to customize:
