@@ -9,10 +9,10 @@ module.exports = {
   // Default: New York City - change to your location
   // You can find your coordinates at: https://www.latlong.net/
   location: {
-    latitude: 40.7128,
-    longitude: -74.0060,
+    latitude: 38.9101,
+    longitude: -77.0669,
     timezone: 'America/New_York',
-    name: 'New York'
+    name: 'Washington DC'
   },
 
   // Google Calendar settings
@@ -24,8 +24,16 @@ module.exports = {
   // Note: Your calendar must be set to public or you need to use an embed URL
   googleCalendar: {
     // Replace with your Google Calendar ID (usually your email for primary calendar)
-    calendarId: 'your-email@gmail.com',
+    calendarId: 'michaelgeraci19@gmail.com',
     // Set to true once you've configured your calendar ID
-    enabled: false
+    enabled: true
+  },
+
+  // Obsidian Tasks settings
+  obsidian: {
+    // Path to your Obsidian vault
+    vaultPath: '/Users/michaelgeraci/Documents/Obsidian Vault',
+    // Set to true to enable tasks widget
+    enabled: true
   }
 };

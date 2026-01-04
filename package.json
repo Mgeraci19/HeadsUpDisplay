@@ -1,14 +1,18 @@
 {
   "name": "heads-up-display",
   "version": "1.0.0",
-  "description": "A local homepage dashboard with weather and calendar",
+  "description": "A local homepage dashboard with weather, calendar, tasks, and daily quotes",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "test": "node --test test/*.test.js"
   },
-  "keywords": ["dashboard", "homepage", "weather", "calendar"],
+  "keywords": ["dashboard", "homepage", "weather", "calendar", "obsidian", "tasks"],
   "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "dependencies": {
     "express": "^4.18.2"
   }
